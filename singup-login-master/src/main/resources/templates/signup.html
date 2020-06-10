@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입 페이지</title>
+
+    <link rel="stylesheet" th:href="@{/css/board.css}">
+    <link rel="stylesheet" th:href="@{/css/base.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+
+</head>
+<body>
+    <h1>회원 가입</h1>
+    <hr>
+    <table class="table table-hover">
+    <form action="/user/signup" method="post">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+        <input type="text" name="email" placeholder="이메일 입력해주세요">
+        <hr>
+        <input type="password" name="password" placeholder="비밀번호">
+        <hr>
+        <input type="carnumber" name="carnumber" placeholder="차량번호">
+        <hr>
+        <input type="phonenumber" name="phonenumber" placeholder="휴대폰번호">
+        <hr>
+        <button type="submit">가입하기</button>
+    </form>
+    </table>
+</body>
+</html>
